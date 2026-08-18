@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "bbb081a6-51c0-47e9-a1e3-b0755267474d",
+		"name": "Music Catalogue API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Artist",
+			"item": [
+				{
+					"name": "Get Artist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/artist/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"artist",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Artist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"artistName\": \"The Beatles\",\n  \"artistLocation\": \"Liverpool\",\n  \"createdBy\": \"admin\",\n  \"lastModifiedBy\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/artist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"artist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Artist",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"artistName\": \"The Beatles Updated\",\n  \"artistLocation\": \"London\",\n  \"lastModifiedBy\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/artist/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"artist",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Artist Alias",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"artistAliasName\": \"Beatles\",\n  \"createdBy\": \"admin\",\n  \"lastModifiedBy\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/artist/2/alias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"artist",
+								"2",
+								"alias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist Alias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/artist/2/alias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"artist",
+								"2",
+								"alias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist Alias List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/artist/2/alias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"artist",
+								"2",
+								"alias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Artist Alias",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"artistAliasName\": \"Dream Theater\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/artist/2/alias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"artist",
+								"2",
+								"alias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Track",
+			"item": [
+				{
+					"name": "Get Track",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/track/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"track",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Track",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/search/track?artistAliasId=1&trackGenre=ALL&trackTitle=ALL&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"search",
+								"track"
+							],
+							"query": [
+								{
+									"key": "artistAliasId",
+									"value": "1"
+								},
+								{
+									"key": "trackGenre",
+									"value": "ALL"
+								},
+								{
+									"key": "trackTitle",
+									"value": "ALL"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Track",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"artistAliasIdList\": [1],\n  \"trackTitle\": \"Hey Jude\",\n  \"trackGenre\": \"Rock\",\n  \"trackLengthInSeconds\": 431,\n  \"trackS3Url\": \"https://s3.amazonaws.com/tracks/hey-jude.mp3\",\n  \"createdBy\": \"system\",\n  \"lastModifiedBy\": \"system\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/track",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"track"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artist of the Day",
+			"item": [
+				{
+					"name": "Get Artist of the Day",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/music-catalogue/artist-of-the-day",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"music-catalogue",
+								"artist-of-the-day"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
